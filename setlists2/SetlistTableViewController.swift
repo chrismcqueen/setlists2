@@ -10,8 +10,11 @@ import UIKit
 
 class SetlistTableViewController: UITableViewController {
     
+    var reorderTableView: LongPressReorderTableView!
     var setlists = [Setlist]()
     
+    //////////////////////////// SAVE & LOAD
+    // if things get fucked up, call this func and hide the loadSetlists func 1x to initialize the app
     func loadSampleSetlists() {
         setlists = [Setlist(name: "Test", key: "Ab")] as! [Setlist]
     }
@@ -26,22 +29,27 @@ class SetlistTableViewController: UITableViewController {
     func loadSetlists() -> [Setlist]? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: Setlist.ArchiveURL.path) as? [Setlist]
     }
+    /////////////////////////////
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        navigationItem.leftBarButtonItem = editButtonItem
+        reorderTableView = LongPressReorderTableView(tableView, scrollBehaviour: .early)
+        reorderTableView.delegate = self
+        reorderTableView.enableLongPressReorder()
         
         // Load saved items
         if let savedSetlists = loadSetlists() {
             setlists += savedSetlists
         }
         
-        // initialize
-       // loadSampleSetlists()
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // navigationItem.leftBarButtonItem = editButtonItem
+        
+        // Uncomment to initialize app
+        // loadSampleSetlists()
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,16 +60,13 @@ class SetlistTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
         return setlists.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SetlistTableViewCell", for: indexPath) as! SetlistTableViewCell
 
@@ -126,9 +131,7 @@ class SetlistTableViewController: UITableViewController {
             alert.dismiss(animated: true, completion: nil)
         }
     }
-    
-    
-    
+     
 
     /*
     // Override to support conditional editing of the table view.
@@ -187,6 +190,33 @@ class SetlistTableViewController: UITableViewController {
             
         }
     }
-    
 
+}
+
+extension SetlistTableViewController {
+    
+    override func startReorderingRow(atIndex indexPath: IndexPath) -> Bool {
+        if indexPath.row >= 0 {
+            return true
+        }
+        
+        return false
+    }
+    
+    override func allowChangingRow(atIndex indexPath: IndexPath) -> Bool {
+        if indexPath.row >= 0 {
+            return true
+        }
+        
+        return false
+    }
+    
+    override func positionChanged(currentIndex: IndexPath, newIndex: IndexPath) {
+        // Simulate a change in model
+        // indexes.swapAt(currentIndex.row, newIndex.row)
+        let movedObject = self.setlists[currentIndex.row]
+        setlists.remove(at: currentIndex.row)
+        setlists.insert(movedObject, at: newIndex.row)
+        saveSetlists()
+    }
 }
