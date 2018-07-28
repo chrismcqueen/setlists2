@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B87CB31210C78E70034552C /* LongPressReorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B87CB30210C78E70034552C /* LongPressReorder.swift */; };
 		2BB313EC2109E22A0068585E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB313EB2109E22A0068585E /* AppDelegate.swift */; };
 		2BB313EE2109E22A0068585E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB313ED2109E22A0068585E /* ViewController.swift */; };
 		2BB313F12109E22A0068585E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BB313EF2109E22A0068585E /* Main.storyboard */; };
@@ -14,6 +15,9 @@
 		2BB313F62109E22A0068585E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BB313F42109E22A0068585E /* LaunchScreen.storyboard */; };
 		2BB314012109E22A0068585E /* setlists2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB314002109E22A0068585E /* setlists2Tests.swift */; };
 		2BB3140C2109E22B0068585E /* setlists2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB3140B2109E22B0068585E /* setlists2UITests.swift */; };
+		2BB3141A2109E29A0068585E /* SetlistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB314192109E29A0068585E /* SetlistTableViewCell.swift */; };
+		2BB3141C2109E3490068585E /* Setlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB3141B2109E3490068585E /* Setlist.swift */; };
+		2BB3141E2109E3900068585E /* SetlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB3141D2109E3900068585E /* SetlistTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B87CB30210C78E70034552C /* LongPressReorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LongPressReorder.swift; path = "../../../../../Downloads/LongPressReorder-master/LongPressReorder/Classes/LongPressReorder.swift"; sourceTree = "<group>"; };
 		2BB313E82109E22A0068585E /* setlists2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = setlists2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BB313EB2109E22A0068585E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BB313ED2109E22A0068585E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +52,9 @@
 		2BB314072109E22B0068585E /* setlists2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = setlists2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BB3140B2109E22B0068585E /* setlists2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setlists2UITests.swift; sourceTree = "<group>"; };
 		2BB3140D2109E22B0068585E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BB314192109E29A0068585E /* SetlistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetlistTableViewCell.swift; sourceTree = "<group>"; };
+		2BB3141B2109E3490068585E /* Setlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setlist.swift; sourceTree = "<group>"; };
+		2BB3141D2109E3900068585E /* SetlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetlistTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +108,10 @@
 				2BB313EB2109E22A0068585E /* AppDelegate.swift */,
 				2BB313ED2109E22A0068585E /* ViewController.swift */,
 				2BB313EF2109E22A0068585E /* Main.storyboard */,
+				2B87CB30210C78E70034552C /* LongPressReorder.swift */,
+				2BB3141B2109E3490068585E /* Setlist.swift */,
+				2BB3141D2109E3900068585E /* SetlistTableViewController.swift */,
+				2BB314192109E29A0068585E /* SetlistTableViewCell.swift */,
 				2BB313F22109E22A0068585E /* Assets.xcassets */,
 				2BB313F42109E22A0068585E /* LaunchScreen.storyboard */,
 				2BB313F72109E22A0068585E /* Info.plist */,
@@ -256,8 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BB3141C2109E3490068585E /* Setlist.swift in Sources */,
 				2BB313EE2109E22A0068585E /* ViewController.swift in Sources */,
 				2BB313EC2109E22A0068585E /* AppDelegate.swift in Sources */,
+				2BB3141A2109E29A0068585E /* SetlistTableViewCell.swift in Sources */,
+				2BB3141E2109E3900068585E /* SetlistTableViewController.swift in Sources */,
+				2B87CB31210C78E70034552C /* LongPressReorder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
